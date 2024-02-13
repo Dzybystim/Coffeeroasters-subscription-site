@@ -1,13 +1,13 @@
-const message = 5;
-console.log(message);
+const clients = ["Mango", "Poly", "Ajax"];
+const clientNameToFind = "Poly";
+let message = "Клієнт з таким ім'ям відсутній в базі даних!";
 
-const isComing = confirm("Please confirm hotel reservation");
-console.log(isComing);
-
-const hotelName = prompt("Please enter desired hotel name");
-console.log(hotelName);
-
-const max = 10;
-for (let i = 0; i < max; i += 1) {
-  console.log(`${max} % ${i} = `, max % i);
+for (const client of clients) {
+  if (client === clientNameToFind) {
+    message = "Клієнт з таким ім'ям є в базі даних!";
+    break;
+  }
+  // Якщо не збігається, то на цій ітерації нічого не робимо
 }
+
+console.log(message);
