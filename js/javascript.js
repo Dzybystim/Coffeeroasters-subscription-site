@@ -1,14 +1,24 @@
-const book = {
-  title: "The Last Kingdom",
-  author: "Bernard Cornwell",
-  genres: ["historical prose", "adventure"],
-  rating: 8.38,
-};
-const keys = Object.keys(book);
+const singleBtn = document.querySelector("#single");
 
-for (const key of keys) {
-  // Ключ
-  console.log(key);
-  // Значення властивості
-  console.log(book[key]);
-}
+const handleClick = () => {
+  console.log("click event listener callback");
+};
+
+singleBtn.addEventListener("click", handleClick);
+
+// ===============================================
+const multiBtn = document.querySelector("#multiple");
+
+const firstCallback = () => {
+  console.log("First callback!");
+};
+const secondCallback = () => {
+  console.log("Second callback!");
+};
+const thirdCallback = () => {
+  console.log("Third callback!");
+};
+
+multiBtn.addEventListener("click", firstCallback);
+multiBtn.addEventListener("click", secondCallback);
+multiBtn.addEventListener("click", thirdCallback);
