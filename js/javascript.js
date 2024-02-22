@@ -1,24 +1,35 @@
-const singleBtn = document.querySelector("#single");
+const clearLogBtn = document.querySelector(".js-clear");
+const logList = document.querySelector(".log-list");
+let keypressCounter = 1;
 
-const handleClick = () => {
-  console.log("click event listener callback");
-};
+console.log(clearLogBtn);
 
-singleBtn.addEventListener("click", handleClick);
+document.addEventListener("keydown", logMessage);
+document.addEventListener("keyup", logMessage);
+clearLogBtn.addEventListener("click", reset);
 
-// ===============================================
-const multiBtn = document.querySelector("#multiple");
+function logMessage({ type, key, code }) {
+  const markup = `<div class="log-item">
+    <span class="chip">${keypressCounter}</span>
+    <ul>
+      <li><b>Event</b>: ${type}</li>
+      <li><b>Key</b>: ${key}</li>
+      <li><b>Code</b>: ${code}</li>
+    </ul>
+  </div>`;
 
-const firstCallback = () => {
-  console.log("First callback!");
-};
-const secondCallback = () => {
-  console.log("Second callback!");
-};
-const thirdCallback = () => {
-  console.log("Third callback!");
-};
+  logList.insertAdjacentHTML("afterbegin", markup);
 
-multiBtn.addEventListener("click", firstCallback);
-multiBtn.addEventListener("click", secondCallback);
-multiBtn.addEventListener("click", thirdCallback);
+  if (type === "keyup") {
+    incrementKeypressCounter();
+  }
+}
+
+function reset() {
+  keypressCounter = 1;
+  logList.innerHTML = "";
+}
+
+function incrementKeypressCounter() {
+  keypressCounter += 1;
+}
