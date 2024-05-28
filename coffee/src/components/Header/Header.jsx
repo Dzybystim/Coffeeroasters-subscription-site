@@ -1,11 +1,14 @@
 import { HeaderStyled } from "./Header.styled";
-import { Logo } from "../Logo/Logo";
+import { Logo } from "./Logo/Logo";
+import  hamburger  from "../../assets/shared/mobile/icon-hamburger.svg";
 
-export const Header = ({ children }) => {
+
+
+export const Header = () => {
   return (
     <HeaderStyled>
-      <Logo></Logo>
-      {children}
+      <Logo/>
+      <img src={hamburger} alt="menu"></img>
     </HeaderStyled>
   );
 };
