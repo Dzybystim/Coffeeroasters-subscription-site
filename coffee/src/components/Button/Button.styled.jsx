@@ -6,6 +6,7 @@ text-decoration: none;
 font-family: Fraunces;
 text-align: center;
 font-size: 18px;
+font-weight: 900;
 line-height: 1.39;
 color: #FEFCF7;
 
@@ -16,4 +17,8 @@ padding-bottom: 16px;
 
 background-color: #0E8784;
 border-radius: 6px;
+
+&:hover {
+    background-color: #66D2CF;
+}
 `

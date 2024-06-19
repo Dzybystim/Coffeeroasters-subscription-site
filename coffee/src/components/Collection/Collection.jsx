@@ -13,6 +13,7 @@ export const Collection = () => {
     return (
 <CollectionBox>
     <HeaderCollection> our collection </HeaderCollection>
+    <ul>
     <CollectionCard name="primary"
     image={granEspresso} 
     header="Gran Espresso" 
@@ -26,6 +27,7 @@ export const Collection = () => {
     <CollectionCard image={danche} 
     header="Danche" 
     text="Ethiopian hand-harvested blend densely packed with vibrant fruit notes"/>
+    </ul>
 </CollectionBox>
     );
   };

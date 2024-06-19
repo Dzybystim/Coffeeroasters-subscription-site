@@ -1,7 +1,8 @@
 import {CollectionCardBox, 
     CardImageBox, 
     CardImage, 
-    CardHeader} from "./CollectionCard.styled"
+    CardHeader,
+    CardText} from "./CollectionCard.styled"
 
 export const CollectionCard = ({image,header,text,name}) => {
     return (
@@ -10,7 +11,7 @@ export const CollectionCard = ({image,header,text,name}) => {
         <CardImage src={image} alt={header}></CardImage>
     </CardImageBox>
     <CardHeader>{header}</CardHeader>
-    <p>{text}</p>
+    <CardText>{text}</CardText>
 </CollectionCardBox>
     );
   };
